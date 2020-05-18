@@ -1,0 +1,112 @@
+/* ----------------------------------------------------------------------------
+* Mixins
+* ------------------------------------------------------------------------- */
+
+/**
+responsive breakpoints
+*/
+@mixin for-phone-down {
+    @media (max-width: 520px) { @content; }
+}
+@mixin for-tablet-up {
+  @media (min-width: 768px) { @content; }
+}
+@mixin for-screen-xxl {
+    @media (min-width: 1500px) { @content; }
+}
+@mixin for-screen-xl {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-screen-l {
+    @media (min-width: 992px) { @content; }
+}
+@mixin for-screen-m {
+    @media (min-width: 768px) { @content; }
+}
+@mixin for-screen-s {
+    @media (min-width: 576px) { @content; }
+}
+@mixin for-tablet-down {
+    @media (max-width: 991px) { @content; }
+}
+@mixin for-phone-down {
+    @media (max-width: 639px) { @content; }
+}
+
+/**
+shadows i radiuses
+*/
+@mixin box-shadow($shadows...) {
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+@mixin border-radius($radius...) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+@mixin border-radius-shadow {
+    @include box-shadow(0 0 4px 1px #c5c5c5);
+    @include border-radius(10px);
+    border: 1px solid $bc_basic;
+}
+
+/**
+transitions
+*/
+@mixin transition-default {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+@mixin transition-collapse {
+    -webkit-transition: max-height 0.4s ease-in-out;
+    -moz-transition: max-height 0.4s ease-in-out;
+    -o-transition: max-height 0.4s ease-in-out;
+    transition: max-height 0.4s ease-in-out;
+}
+@mixin transition-text {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+@mixin transition-icon {
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+/**
+ui-elements
+*/
+@mixin circle-link {
+    background-color: $bc_basic;
+    color: white;
+    border-radius: 100%;
+    text-transform: uppercase;
+    width: 150px;
+    height: 150px;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    white-space: pre-wrap;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+        background-color: $bc_hover;
+    }
+    @include for-screen-xxl {
+        width: 175px;
+        height: 175px;
+        font-size: 1.75em;
+    }
+}

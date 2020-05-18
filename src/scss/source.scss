@@ -1,0 +1,26 @@
+/* ----------------------------------------------------------------------------
+ * Main Stylesheet file.
+ *
+ * Source file for all SCSS files.
+ * ------------------------------------------------------------------------- */
+
+// — VENDORS.
+
+// Normalize.
+@import 'vendor/normalize';
+
+// Slider.
+@import 'vendor/tiny-slider';
+
+
+
+// — PARTIALS.
+
+// Variables.
+@import 'partial/_variables';
+
+// Mixins.
+@import 'partial/_mixins';
+
+// Base.
+@import 'partial/_base';
